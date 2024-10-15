@@ -1,0 +1,84 @@
+\documentclass[12pt, letterpaper]{article}
+\usepackage{graphicx}
+\usepackage[a4paper, total={6in, 10in}]{geometry}
+\usepackage{amsmath}
+\usepackage{bm}
+\usepackage{listings}
+\usepackage{xcolor}
+\lstset { %
+    language=C++,
+    backgroundcolor=\color{black!5}, % set backgroundcolor
+    basicstyle=\footnotesize,% basic font setting
+}
+
+\title{Algorithm and Data Structure Analysis Notes}
+\author{Sam Kirk} 
+\date{July 2024}
+
+\begin{document}
+\maketitle
+
+LOOK AT CLUBS FROM FIRST LECTURE  
+
+\section*{Week 1}
+Include time complexity notation cheat sheet 
+
+\section*{Week 3}
+\subsection*{Radix Sort}
+Put the last digit of each element into buckets and sort it. 
+Repeat for all the digits until fully sorted. Can do first digit 
+as well (MSD). Order is O(dn+dk) for n numbers on d digits 
+that range from 1 to k. 
+
+\subsection*{Counting sort}
+O(n+k) = O(n) for n inputs in the range of 1 to k.  
+
+\subsection*{Order Statistics}
+The ith order statistic of n elements is the ith smallest element. 
+The minimum is the 1st, and the maximum element is the nth order 
+statistic. The median is the n/2 order statistic. If n is even there 
+are two medians. 
+
+\subsection*{Randomized Selection}
+This is a method to find the ith element statistic. 
+So imagine we want to find the 5th smallest element in an array of 
+size 11. We randomly select a pivot, say 9, and since 9>5, we 
+put the two largest elements in the array at index 10 and 11. 
+Now we call the function again, with the size 9, still looking for 
+index 5. If we select a new pivot of 2, we put the two smallet 
+elements at the front and call the function again with size 9-2 =7. 
+Here we change the index we are looking for to 3, since we chopped 
+off the first two smallest elements. We keep going until we land 
+on the 5th smallest element. 
+
+\section*{Week 4}
+
+\section*{Week 5}
+\subsection*{AVL Trees}
+
+\section*{Week 6}
+\subsection*{Hasing With Chaining}
+Also known as Open hashing or Closed adressing.
+Hashing with chaining is a collision resolution technique where 
+each table slot contains a linked list of elements that hash to the 
+same index. When a collision occurs (multiple keys mapping to the same 
+hash value), the new element is appended/preneded to the list.
+
+\subsection*{Hashing with Linear Probing}
+Here when a collision occurs, the algorithm searches for the next 
+available slot by moving linearly through the table. 
+
+\subsection*{Chaining vs Probing}
+Chanining maintains referential integrity. It potentially takes 
+up a lot of space. Linear probing is a contiguous block of memory 
+which aligns well with modern processors. It does get slower 
+as the table fills up though.  
+
+
+
+\section*{To include in cheat sheet for exam}
+\begin{itemize}
+    \item Graph algorithms and how they work 
+\end{itemize}
+
+\end{document}
